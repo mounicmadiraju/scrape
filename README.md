@@ -7,7 +7,8 @@ This folder contains a web-scraper to scrape [Numbeo](https://www.numbeo.com/cos
 This scraper is built to scape Numbeo for an inputted country and location. To use it, you can simply call it from the command line as follows: 
 
 ```python 
-python scrape.py
+python scrape.py   for scrapping all cost of living information
+python scrape_healthcare.py     for scrapping only health care components
 ```
 
 ## API Accessible
