@@ -71,10 +71,10 @@ class API(object):
     def get_all_city(self):
         """ get the table of all the city and returns as a dict"""
         country = self.country
-        self.result[country]["child"] = []
+        self.result[country]["child"] = {}
         for city in self.city:
             print "crawling Country -> %s, city -> %s"%(country, city)
-            self.result[country]["child"].append(self.get_single_city(city))
+            self.result[country]["child"][city] = self.get_single_city(city)
 
 def write_json(FILE, OBJECT):
     """ Function to store as a json file"""
