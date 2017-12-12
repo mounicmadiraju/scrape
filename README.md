@@ -9,3 +9,9 @@ This scraper is built to scape Numbeo for an inputted country and location. To u
 ```python 
 python scrape.py
 ```
+
+## API Accessible
+
+api = API(URL, "country")
+
+api.get_single_city("location")
