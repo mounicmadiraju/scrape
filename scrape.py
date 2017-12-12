@@ -44,6 +44,21 @@ class API(object):
         else:
             self.page = None
             self.city = None
+    def get_result(self):
+        """returns the result for the country"""
+        return self.result[self.country]
+
+    def get_page(self, url):
+        """ get the page from the url"""
+        request = requests.get(url)
+        if request.status_code != 200:
+            return None
+        return request
+
+    def get_city(self):
+        """get all the city"""
+        self.city_form = self.page.find("form", {"class": "standard_margin"})
+        self.city = [values["value"] for values in self.city_form("option")]
 
 if __name__ == "__main__":
     COUNTRY = ['Malaysia']
