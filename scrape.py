@@ -17,7 +17,7 @@ class Extract_table:
     def extract(self):
         """A method to extract the table contents and store to a dict"""
         if not self.Table:
-            return None #check if it is in the format.
+            return None #check if it is in the formate.
         for row in self.Table("tr"):
             if row("th"):
                 key = row("th")[0].text
@@ -40,7 +40,7 @@ class API(object):
             EX = Extract_table(self.page)
             self.result[Country] = EX.extract()
             if city:
-                self.get_all_city(Country)
+                self.get_all_city()
         else:
             self.page = None
             self.city = None
@@ -74,7 +74,7 @@ class API(object):
         self.result[country]["child"] = []
         for city in self.city:
             print "crawling Country -> %s, city -> %s"%(country, city)
-            self.result[country]["child"].append(self.get_single_city(country, city))
+            self.result[country]["child"].append(self.get_single_city(city))
 
 def write_json(FILE, OBJECT):
     """ Function to store as a json file"""
@@ -85,7 +85,7 @@ def write_json(FILE, OBJECT):
 if __name__ == "__main__":
     COUNTRY = ['Malaysia','Singapore','Australia']
     results = {}
-    city = 0 #set 1 to crawl all city
+    city = 1 #set 1 to crawl all city
     for i in COUNTRY:
         obj = API(URL, i, city)
         results[i] = obj.get_result()
