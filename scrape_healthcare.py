@@ -89,9 +89,9 @@ if __name__ == "__main__":
     BASE = HEALTH #  change to COST for cost of lining
     COUNTRY = ['Malaysia','Singapore','Australia']
     results = {}
-    city = 1 #set 1 to carwl all city
+    city = 1 #set 1 to crawl all city
     for i in COUNTRY:
         obj = API(BASE, i, city)
         results[i] = obj.get_result()
-    write_json("results.json",results) #uncomment to save the results.
+    write_json("healthcare.json",results) #uncomment to save the results.
     
