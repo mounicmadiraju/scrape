@@ -9,6 +9,7 @@ This scraper is built to scape Numbeo for an inputted country and location. To u
 ```python 
 python scrape.py   for scrapping all cost of living information
 python scrape_healthcare.py     for scrapping only health care components
+python scrape_pollution.py     for scrapping all pollution data
 ```
 
 ## API Accessible
